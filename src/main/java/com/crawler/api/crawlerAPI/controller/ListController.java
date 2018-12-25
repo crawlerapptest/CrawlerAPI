@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/crawlerapi")
-public class crawlerAPIController {
+@RequestMapping("/list")
+public class ListController {
 
     @Autowired
     usersOrderByTopFollowersRepository usersOrderByTopFollowersRepo;
@@ -26,17 +26,17 @@ public class crawlerAPIController {
     @Autowired
     totalPostsByTagAndCountryRepository totalPostsByTagAndCountryRepo;
 
-    @GetMapping("/listAllUsersOrderByTopFollowers")
+    @GetMapping("/AllUsersOrderByTopFollowers")
     public List<userWithMoreFollowers> listAllUsersOrderByTopFollowers() {
         return usersOrderByTopFollowersRepo.listAllUsersOrderByTopFollowers();
     }
 
-    @GetMapping("/listTotalPostsOrderByHour")
+    @GetMapping("/TotalPostsOrderByHour")
     public List<totalPostsOrderByHour> listTotalPostsOrderByHour() {
         return totalPostsOrderByHourRepo.listTotalPostsOrderByHour();
     }
 
-    @GetMapping("/listTotalPostsByTagAndCountry")
+    @GetMapping("/TotalPostsByTagAndCountry")
     public List<totalPostsByTagAndCountry> listTotalPostsByTagAndCountry() {
         return totalPostsByTagAndCountryRepo.listTotalPostsByTagAndCountry();
     }
